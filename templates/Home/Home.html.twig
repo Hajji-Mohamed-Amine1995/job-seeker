@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>{% block title %}Modern Business - Start Bootstrap Template{% endblock %}</title>
+        <title>{% block title %}JobSeeker{% endblock %}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('styles/assets/favicon.ico') }}" />
         <!-- Bootstrap icons-->
@@ -14,90 +14,74 @@
         <link href="{{ asset('styles/css/styles.css') }}" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="{{ path('home') }}">Start Bootstrap</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            {# <li class="nav-item"><a class="nav-link" href="{{ path('homepage') }}">Home</a></li> #}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('About') }}">About</a></li>
-                            {# <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ path('pricing') }}">Pricing</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ path('faq') }}">FAQ</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="{{ path('blog_home') }}">Blog Home</a></li>
-                                    <li><a class="dropdown-item" href="{{ path('blog_post') }}">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="{{ path('portfolio_overview') }}">Portfolio Overview</a></li>
-                                    <li><a class="dropdown-item" href="{{ path('portfolio_item') }}">Portfolio Item</a></li>
-                                </ul>
-                            </li> #}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Header-->
-            <header class="bg-dark py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
-                            <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">A Bootstrap 5 template for modern businesses</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                                    <a class="btn btn-outline-light btn-lg px-4" href="#">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                            <img class="img-fluid rounded-3 my-5" src="{{ asset('images/sample-image.jpg') }}" alt="..." />
-                        </div>
-                    </div>
-                </div>
-            </header>
+        {%
+            include "./header/header.html.twig"
+        %}
+        <main class="flex-shrink-0 p-0">
             <!-- Features section-->
-             <section class="py-5" id="features">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
-                        <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                                <div class="col h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Featured title</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                                </div>
-                            </div>
+             <section class="p-0" id="features">
+                <div class="w-100 d-flex flex-row gap-2 align-items-center justify-content-center flex-wrap p-3">
+                    <div class="text-start" style='width:clamp(350px,40%,100%)'>
+                        <h1 class="display-5 fw-bolder text-dark mb-2">Find your dream job faster</h1>
+                        <p class="lead fw-normal text-dark-50 mb-4">Welcome to JobSeeker, where job seekers and employers connect effortlessly. Find your dream job or build your ideal team with powerful search tools, personalized matches, and seamless communication. Join us today for a smarter recruitment experience!</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                            <a class="btn btn-outline-dark btn-lg px-4" href="#">Learn More</a>
                         </div>
                     </div>
+                    <img class="rounded-3" style='width:clamp(350px,40%,100%)' src="{{ asset('/images/Job hunt-amico.svg') }}" alt="..." />
                 </div>
+                <section class="container my-5">
+                    <div class="text-center d-flex flex-row align-items-center justify-content-center flex-wrap gap-3">
+                    <div style="width:clamp(350px,30%,450px)" class="rounded-2 p-3">
+                        <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-search fs-1 text-primary mb-3"></i>
+                            <h3 class="card-title">Advanced Job Search</h3>
+                            <p class="card-text">Easily filter jobs by location, industry, salary, and more for tailored results.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div style="width:clamp(350px,30%,450px)" class="rounded-2 p-3">
+                        <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-person-check fs-1 text-primary mb-3"></i>
+                            <h3 class="card-title">Personalized Profiles</h3>
+                            <p class="card-text">Create a standout profile to showcase your skills and experiences to top employers.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div style="width:clamp(350px,30%,450px)" class="rounded-2 p-3">
+                        <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-chat-dots fs-1 text-primary mb-3"></i>
+                            <h3 class="card-title">Easy Communication</h3>
+                            <p class="card-text">Connect with employers or candidates through an integrated chat system.</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <section class="bg-light py-5">
+                    <div class="container text-center">
+                    <h2 class="mb-4">Why Choose Us?</h2>
+                    <div class="d-flex flex-row justify-content-center align-content-center flex-wrap gap-3">
+                        <div style="width:clamp(350px,30%,450px)" class="border border-dark border-1 rounded-2 p-3">
+                            <h4 class="text-primary">Fast & Reliable</h4>
+                            <p>Quickly find jobs or candidates that match your criteria without delays.</p>
+                        </div>
+                        <div style="width:clamp(350px,30%,450px)" class="border border-dark border-1 rounded-2 p-3">
+                            <h4 class="text-primary">Secure Platform</h4>
+                            <p>Your data and interactions are fully encrypted for maximum privacy.</p>
+                        </div>
+                        <div style="width:clamp(350px,30%,450px)" class="border border-dark border-1 rounded-2 p-3">
+                            <h4 class="text-primary">Global Reach</h4>
+                            <p>Access a wide network of opportunities and talent, both locally and internationally.</p>
+                        </div>
+                    </div>
+                    </div>
+                </section>
             </section>
             <!-- Testimonial section-->
             <div class="py-5 bg-light">
@@ -215,25 +199,13 @@
             </section>
         </main>
         <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto">
-                        <div class="small m-0 text-white">Copyright &copy; Your Website {{ "now"|date("Y") }}</div>
-                    </div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="#!">Privacy</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Terms</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {%
+            include "./footer/footer.html.twig"
+        %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('styles/js/scripts.js') }}"></script>
+        <script></script>
     </body>
 </html>
